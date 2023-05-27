@@ -58,7 +58,8 @@ yc vpc subnet create \
 }
 ```
 Где:<br>
-"token" и "folder_id" берем из вывода "yc config list"<br>
+"token" можно получить по запросу: https://oauth.yandex.ru/authorize?response_type=token&client_id=1a6990aa636648e9b2ef855fa7bec2fb
+"folder_id" берем из вывода "yc config list"<br>
 "subnet_id" берем из вывода "yc vpc subnet list"<br>
 <br>
 
