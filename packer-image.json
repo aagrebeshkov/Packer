@@ -2,8 +2,8 @@
   "builders": [
     {
       "type":      "yandex",
-      "token":     "y0_AgAAAAAUWIdnAATuwQAAAADkFzoTyGVIJy_uTa2Ix-FV6Wg2zY0b-oM",
-      "folder_id": "b1g5eekbbahqfrbloj9t",
+      "token":     "XXX",
+      "folder_id": "XXX",
       "zone":      "ru-central1-a",
 
       "image_name":        "my-ubuntu-2004-{{isotime | clean_resource_name}}",
@@ -11,7 +11,7 @@
       "image_description": "my custom ubuntu-20.04",
 
       "source_image_family": "ubuntu-2004-lts",
-      "subnet_id":           "e9blfcs478crgqoml1t6",
+      "subnet_id":           "XXX",
       "use_ipv4_nat":        true,
       "disk_type":           "network-hdd",
       "ssh_username":        "ubuntu"
