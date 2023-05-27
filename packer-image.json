@@ -1,0 +1,35 @@
+{
+  "builders": [
+    {
+      "type":      "yandex",
+      "token":     "y0_AgAAAAAUWIdnAATuwQAAAADkFzoTyGVIJy_uTa2Ix-FV6Wg2zY0b-oM",
+      "folder_id": "b1g5eekbbahqfrbloj9t",
+      "zone":      "ru-central1-a",
+
+      "image_name":        "my-ubuntu-2004-{{isotime | clean_resource_name}}",
+      "image_family":      "my-ubuntu-2004",
+      "image_description": "my custom ubuntu-20.04",
+
+      "source_image_family": "ubuntu-2004-lts",
+      "subnet_id":           "e9blfcs478crgqoml1t6",
+      "use_ipv4_nat":        true,
+      "disk_type":           "network-hdd",
+      "ssh_username":        "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "echo 'updating APT'",
+        "sudo apt-get update -y",
+        "sudo apt-get install -y net-tools wget zip unzip curl telnet htop",
+        "curl -fsSL https://get.docker.com -o get-docker.sh",
+        "sh get-docker.sh",
+        "sudo ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/",
+        "sudo systemctl start docker & sudo systemctl enable docker",
+        "sudo usermod -aG docker $USER"
+      ]
+    }
+  ]
+}
